@@ -1,21 +1,21 @@
 # Stock Market Trend Prediction &nbsp; [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ianjure/stock-market-trend-prediction/blob/main/Stock_Market_Trend_Prediction_Notebook.ipynb)
-The **stock market** is a volatile market where people buy and sell stocks. The goal of this project is to create a machine learning model to predict a weekly and monthly trend for a publicly traded stock. The model will forecast whether the stock price will go up or down by next week or next month. We will utilize historical stock price and economic data in order to train a number of classification models and find the most accurate one. After that, we will create a web application that anyone can use to test our model with recent data.
+The **stock market** is known for its volatility, characterized by the buying and selling of stocks. This project aims to develop a machine learning model that predicts weekly and monthly trends for publicly traded stocks. The model will forecast whether stock prices will rise or fall in the upcoming week or month. To train various classification models and identify the most accurate one, we will use historical stock price and economic data. Following this, we will build a web application that allows users to test our model with up-to-date data.
 
 ## Data Overview
-We will be using the [yfinance](https://pypi.org/project/yfinance/) library to fetch historical stock price data from the [Yahoo Finance](https://finance.yahoo.com/) API. These data contains columns such as the closing and opening prices of any publicly traded stocks. We will also retrieve economic data, such as interest rates, from [FRED](https://fred.stlouisfed.org/docs/api/fred/#API) that we can add to our dataset as additional indicators.
+We will use the [yfinance](https://pypi.org/project/yfinance/) library to fetch historical stock price data from the [Yahoo Finance](https://finance.yahoo.com/) API. This data includes columns such as closing and opening prices for publicly traded stocks. Additionally, we will retrieve economic data, such as interest rates, from [FRED](https://fred.stlouisfed.org/docs/api/fred/#API) to include as supplementary indicators in our dataset.
 
 ## Project Method
-1. **Fetch the Data:** Collect the data from Yahoo Finance.
-2. **Clean the Data:** Select relevant features and fix the index format.
-3. **Create new Features:** Make useful features from the existing variables.
-4. **Normalize the Data:** Scale original variables to reduce dependency.
-5. **Append new Features:** Add economic data from FRED as additional features.
-6. **Build the Model:** Train and find the best algorithm.
-7. **Deploy the Model:** Build a web application to test the model.
+1. **Fetch the Data:** Collect stock price data from Yahoo Finance.
+2. **Clean the Data:** Select relevant features and standardize the index format.
+3. **Create New Features:** Derive useful features from the existing variables.
+4. **Normalize the Data:** Scale the original variables to minimize dependency.
+5. **Append New Features:** Integrate economic data from FRED as additional features.
+6. **Build the Model:** Train various algorithms to identify the most effective one.
+7. **Deploy the Model:** Develop a web application to allow users to test the model.
 
 ## Next Steps
-1. Introduce more **economic indicators** to improve data quality.
-2. Try **tuning** the best model to see improvements in accuracy.
+* Introduce additional economic indicators to enhance data quality.
+* Tune the best-performing model to improve accuracy.
 
 <br>
 
