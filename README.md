@@ -19,4 +19,4 @@ We will be using the **[Titanic](https://www.kaggle.com/competitions/titanic/dat
 
 <br>
 
-**This project is inspired by:** [Titanic Dataset using Random Forest](https://www.kaggle.com/code/murtadhanajim/80-in-titanic-dataset-using-random-forests/notebook)
+**This project is inspired by:** [Predict The Stock Market With Machine Learning And Python](https://www.youtube.com/watch?v=1O_BenficgE)
