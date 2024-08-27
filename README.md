@@ -15,7 +15,7 @@ We will be using the **[Titanic](https://www.kaggle.com/competitions/titanic/dat
 
 ## Next Steps
 1. Introduce more **economic indicators** to improve data quality.
-2. Try **tuning** the best model to see accuracy improvement.
+2. Try **tuning** the best model to see improvement in accuracy.
 
 <br>
 
