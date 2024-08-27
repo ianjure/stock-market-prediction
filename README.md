@@ -5,17 +5,17 @@ Let's go back to 1912 and explore the data behind the **Titanic** tragedy. The g
 We will be using the **[Titanic](https://www.kaggle.com/competitions/titanic/data)** dataset from **Kaggle**, which is semi-clean data that contains passenger information like name, age, gender, socio-economic class, etc.
 
 ## Project Method
-1. **Fetch the Data:** Collect the data from Yahoo finance.
-2. **Clean the Data:** Select relevant features and fix index format.
+1. **Fetch the Data:** Collect the data from Yahoo Finance.
+2. **Clean the Data:** Select relevant features and fix the index format.
 3. **Create new Features:** Make useful features from the existing variables.
-4. **Normalize the Data:** Scale original variables to reduce redundancy and dependency.
+4. **Normalize the Data:** Scale original variables to reduce dependency.
 5. **Append new Features:** Add economic data as new features.
 6. **Build the Model:** Train and find the best algorithm.
 7. **Deploy the Model:** Build a web application to test the model.
 
 ## Next Steps
 1. Introduce more **economic indicators** to improve data quality.
-2. Try **tuning** the best model to see improvement in accuracy.
+2. Try **tuning** the best model to see improvements in accuracy.
 
 <br>
 
