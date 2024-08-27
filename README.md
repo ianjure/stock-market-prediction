@@ -2,7 +2,7 @@
 Let's go back to 1912 and explore the data behind the **Titanic** tragedy. The goal of this project is to create a machine learning model to predict if a passenger will survive the incident. We will utilize classification algorithms and processed data to find the best model. After that, we will create a web application that anyone can use to try and test our model with new data inputs.
 
 ## Data Overview
-We will be using the **[Titanic](https://www.kaggle.com/competitions/titanic/data)** dataset from **Kaggle**, which is semi-clean data that contains passenger information like name, age, gender, socio-economic class, etc.
+We will be using the [yfinance](https://pypi.org/project/yfinance/) python library to fetch historical stock price data from the [Yahoo Finance](https://finance.yahoo.com/) API. These data contains columns such as the closing and opening prices of any publicly traded stocks.
 
 ## Project Method
 1. **Fetch the Data:** Collect the data from Yahoo Finance.
