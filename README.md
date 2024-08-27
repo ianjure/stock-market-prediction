@@ -14,8 +14,8 @@ We will use the **[yfinance](https://pypi.org/project/yfinance/)** library to fe
 7. **Deploy the Model:** Develop a web application to allow users to test the model.
 
 ## Next Steps
-* Introduce additional economic indicators to enhance data quality.
-* Tune the best-performing model to improve accuracy.
+* **Introduce** additional economic indicators to enhance data quality.
+* **Tune** the best-performing model to improve accuracy.
 
 <br>
 
