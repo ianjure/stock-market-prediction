@@ -28,8 +28,9 @@ hide = """
 st.markdown(hide, unsafe_allow_html=True)
 
 # TITLE
-st.markdown("<h1 style='text-align: center; text-justify: inter-word;'>Stock Trend Forecaster</h1>", unsafe_allow_html=True)
-st.markdown("<h1 style='text-align: center; justify-content: center;'>Stock Trend Forecaster</h1>", unsafe_allow_html=True)
+st.markdown("<div style='text-align: center; text-justify: inter-word;'>Stock Trend Forecaster</div>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: center; text-justify: inter-word;'>Stock Trend Forecaster</p>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center;'>Stock Trend Forecaster</h1>", unsafe_allow_html=True)
 
 # SUBTITLE
 st.markdown("<h6 style='text-align: center;'>Predicts market movements based on historical and economic data.</h6>", unsafe_allow_html=True)
