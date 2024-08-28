@@ -44,8 +44,8 @@ with st.sidebar:
                 notebook_button = st.link_button("NOTEBOOK", "https://colab.research.google.com/github/ianjure/stock-market-trend-forecast/blob/master/Stock_Market_Trend_Forecast_Notebook.ipynb", use_container_width=True)
 
 # GET ALL TICKER SYMBOLS
-text = open("symbols.txt", "r")
-stocks = text.read().split(",")
+text = open("stocks_clean.txt", "r")
+stocks = text.read().split("|")
 text.close()
 
 # MAIN UI
@@ -62,6 +62,7 @@ with col2:
 
 if chart_btn:
     with st.spinner('Fetching stock information...'):
+        ticker = ticker.strip().split("-")[0]
         stock = yf.Ticker(ticker)
         stock_name = stock.info['shortName']
         stock_website = stock.info['website']
@@ -84,6 +85,7 @@ if chart_btn:
         st.line_chart(data=stock, x=None, y='Close', x_label='Years', y_label='Price', use_container_width=True)
 
 if predict_btn:
+    ticker = ticker.strip().split("-")[0]
     stock = yf.Ticker(ticker)
     stock_name = stock.info['shortName']
     stock_ticker = stock.info['symbol']
