@@ -31,7 +31,7 @@ st.markdown(hide, unsafe_allow_html=True)
 st.markdown("<h1 style='text-align: center;'>Stock Trend Forecaster</h1>", unsafe_allow_html=True)
 
 # SUBTITLE
-st.markdown("<h3 style='text-align: center;'>The stock trend forecaster predicts market movements based on historical data and economic indicators.</h3>", unsafe_allow_html=True)
+st.markdown("<h4 style='text-align: center;'>Predicts market movements based on historical data and economic indicators.</h4>", unsafe_allow_html=True)
 
 # SIDEBAR
 with st.sidebar:
