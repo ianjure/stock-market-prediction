@@ -3,6 +3,7 @@ import streamlit as st
 from sklearn.linear_model import LogisticRegression
 from preprocess import format_week, format_month
 from backtest import backtest
+from streamlit_extras.stylable_container import stylable_container
 
 # PAGE CONFIGURATIONS
 st.set_page_config(page_title="Stock Trend Forecaster", page_icon="🏛️", layout="centered", initial_sidebar_state="collapsed")
