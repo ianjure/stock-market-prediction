@@ -30,7 +30,7 @@ st.markdown(hide, unsafe_allow_html=True)
 
 pbtn = """
         <style>
-        .button[data-testid="stBaseButton-primary"] {
+        button[data-testid="stBaseButton-primary"] {
                 color: black;
         }
         </style>
