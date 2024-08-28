@@ -114,7 +114,7 @@ if chart_btn:
         
                 with info_2:
                     st.write(f"**Category:** {stock_category}")
-                    st.write(f"**Price:** ${stock_yield}")
+                    st.write(f"**Price:** ${stock_price}")
                         
         st.dataframe(stock.tail(), use_container_width=True)
         st.line_chart(data=stock, x=None, y='Close', x_label='Years', y_label='Price', use_container_width=True)
