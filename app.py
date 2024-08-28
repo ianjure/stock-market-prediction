@@ -52,7 +52,7 @@ text.close()
 # MAIN UI
 with st.container(border=True):
     ticker = st.selectbox("SELECT A STOCK", stocks)
-    timeframe = st.selectbox("PREDICTION TIMEFRAME", ("Week", "Month"))
+    timeframe = st.selectbox("CHOOSE A TIMEFRAME", ("Week", "Month"))
     col1, col2 = st.columns(2)
 
 with col1:
