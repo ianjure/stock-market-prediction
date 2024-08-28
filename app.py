@@ -10,7 +10,7 @@ st.set_page_config(page_title="Stock Trend Forecaster", page_icon="🏛️", lay
 top = """
         <style>
         .block-container {
-                padding-top: 5rem;
+                padding-top: 7rem;
                 padding-bottom: 5rem;
                 margin-top: 0rem;
         }
