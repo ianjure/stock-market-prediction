@@ -75,28 +75,33 @@ if chart_btn:
                 stock_volume = stock.info['volume']
                 stock_category = stock.info['category']
                 stock_yield = stock.info['yield']
+                info = False
+            
         stock = stock.history(period="max")
+
+        with st.container(border=True):
+                info_1, info_2 = st.columns(2)
 
         if info:
                 with st.container(border=True):
-                    info_true1, info_true2 = st.columns(2)
+                    info_1, info_2 = st.columns(2)
                         
-                with info_true1:
+                with info_1:
                     st.write(f"**Company Name:** {stock_name}")
                     st.write(f"**Website:** {stock_website}")
         
-                with info_true2:
+                with info_2:
                     st.write(f"**Sector:** {stock_sector}")
                     st.write(f"**Industry:** {stock_industry}")
         else:
                 with st.container(border=True):
-                    info_false1, info_false2 = st.columns(2)
+                    info_1, info_2 = st.columns(2)
                         
-                with info_false1:
+                with info_1:
                     st.write(f"**Company Name:** {stock_name}")
                     st.write(f"**Volume:** {stock_volume} Shares")
         
-                with info_false2:
+                with info_2:
                     st.write(f"**Category:** {stock_category}")
                     st.write(f"**Yield:** {round(stock_yield * 100, 2)}%")
                         
