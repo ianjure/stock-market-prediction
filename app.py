@@ -36,7 +36,7 @@ st.markdown("<p style='text-align: center; font-size: 1rem; font-weight: 500; li
 
 # SIDEBAR
 with st.sidebar:
-        st.link_button("**Creator:** Ian Jure Macalisang", "https://github.com/ianjure", use_container_width=True)
+        st.link_button("**Developer:** Ian Jure Macalisang", "https://github.com/ianjure", type="primary", use_container_width=True)
         b1_col, b2_col = st.columns(2)
         with b1_col:
                 repo_button = st.link_button("SOURCE CODE", "https://github.com/ianjure/stock-market-trend-forecast", use_container_width=True)
