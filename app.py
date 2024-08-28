@@ -65,7 +65,7 @@ if chart_btn:
         ticker = ticker.strip().split("-")[0]
         stock = yf.Ticker(ticker)
         st.write(stock.info)
-        stock_name = stock.info['shortName']
+        stock_name = stock.info['longName']
         stock_website = stock.info['website']
         stock_sector = stock.info['sector']
         stock_industry = stock.info['industry']
