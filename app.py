@@ -91,7 +91,7 @@ if chart_btn:
         except:
                 stock_volume = stock.info['volume']
                 stock_category = stock.info['category']
-                stock_yield = stock.info['yield']
+                stock_price = stock.info['open']
                 info = False
             
         stock = stock.history(period="max")
@@ -114,7 +114,7 @@ if chart_btn:
         
                 with info_2:
                     st.write(f"**Category:** {stock_category}")
-                    st.write(f"**Yield:** {round(stock_yield * 100, 2)}%")
+                    st.write(f"**Price:** ${stock_yield}")
                         
         st.dataframe(stock.tail(), use_container_width=True)
         st.line_chart(data=stock, x=None, y='Close', x_label='Years', y_label='Price', use_container_width=True)
