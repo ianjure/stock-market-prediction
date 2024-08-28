@@ -77,23 +77,26 @@ if chart_btn:
                 stock_yield = stock.info['yield']
         stock = stock.history(period="max")
 
-        with st.container(border=True):
-            info_col1, info_col2 = st.columns(2)
-
         if info:
-                with info_col1:
+                with st.container(border=True):
+                    info_true1, info_true2 = st.columns(2)
+                        
+                with info_true1:
                     st.write(f"**Company Name:** {stock_name}")
                     st.write(f"**Website:** {stock_website}")
         
-                with info_col2:
+                with info_true2:
                     st.write(f"**Sector:** {stock_sector}")
                     st.write(f"**Industry:** {stock_industry}")
         else:
-                with info_col1:
+                with st.container(border=True):
+                    info_false1, info_false2 = st.columns(2)
+                        
+                with info_false1:
                     st.write(f"**Company Name:** {stock_name}")
                     st.write(f"**Volume:** {stock_volume} Shares")
         
-                with info_col2:
+                with info_false2:
                     st.write(f"**Category:** {stock_category}")
                     st.write(f"**Yield:** {round(stock_yield * 100, 2)}%")
                         
@@ -102,8 +105,8 @@ if chart_btn:
 
 if predict_btn:
     
-    ticker = tickers.strip().split("-")[0]
-    stock = yf.Ticker(str(ticker))
+    ticker = tickers.split("-")[0].replace(" ", "")
+    stock = yf.Ticker(ticker)
     stock_name = stock.info['shortName']
     stock_ticker = stock.info['symbol']
     stock = stock.history(period="max")
