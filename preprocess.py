@@ -32,22 +32,6 @@ def format_week(stock):
 
     stock = stock.dropna(subset=['Close_Ratio_4', 'Trend_4', 'Close_Ratio_13', 'Trend_13', 'Close_Ratio_26', 'Trend_26', 'Close_Ratio_52', 'Trend_52', 'Close_Ratio_208', 'Trend_208'])
 
-    # SCALING
-    from sklearn.preprocessing import StandardScaler, MinMaxScaler
-
-    features_to_scale = ["Open","High","Low","Close","Volume"]
-    standard_scaler = StandardScaler()
-    minmax_scaler = MinMaxScaler()
-
-    standard_scaled = standard_scaler.fit_transform(stock[features_to_scale])
-    standard_scaled = pd.DataFrame(standard_scaled, index=stock.index, columns=['Standard Open', 'Standard High', 'Standard Low', 'Standard Close', 'Standard Volume'])
-
-    minmax_scaled = minmax_scaler.fit_transform(stock[features_to_scale])
-    minmax_scaled = pd.DataFrame(minmax_scaled, index=stock.index, columns=['MinMax Open', 'MinMax High', 'MinMax Low', 'MinMax Close', 'MinMax Volume'])
-
-    stock = pd.concat([stock, standard_scaled], axis=1)
-    stock = pd.concat([stock, minmax_scaled], axis=1)
-
     # ADDING FEATURES
     crude_oil = fred.get_series('DCOILWTICO').rename('Price')
     crude_oil = crude_oil.reindex_like(stock)
@@ -92,22 +76,6 @@ def format_month(stock):
       stock[trend_column] = stock.shift(1).rolling(horizon).sum()["Target"]
 
     stock = stock.dropna(subset=['Close_Ratio_2', 'Trend_2', 'Close_Ratio_6', 'Trend_6', 'Close_Ratio_12', 'Trend_12', 'Close_Ratio_30', 'Trend_30', 'Close_Ratio_60', 'Trend_60'])
-
-    # SCALING
-    from sklearn.preprocessing import StandardScaler, MinMaxScaler
-
-    features_to_scale = ["Open","High","Low","Close","Volume"]
-    standard_scaler = StandardScaler()
-    minmax_scaler = MinMaxScaler()
-
-    standard_scaled = standard_scaler.fit_transform(stock[features_to_scale])
-    standard_scaled = pd.DataFrame(standard_scaled, index=stock.index, columns=['Standard Open', 'Standard High', 'Standard Low', 'Standard Close', 'Standard Volume'])
-
-    minmax_scaled = minmax_scaler.fit_transform(stock[features_to_scale])
-    minmax_scaled = pd.DataFrame(minmax_scaled, index=stock.index, columns=['MinMax Open', 'MinMax High', 'MinMax Low', 'MinMax Close', 'MinMax Volume'])
-
-    stock = pd.concat([stock, standard_scaled], axis=1)
-    stock = pd.concat([stock, minmax_scaled], axis=1)
 
     # ADDING FEATURES
     crude_oil = fred.get_series('DCOILWTICO').rename('Price')
