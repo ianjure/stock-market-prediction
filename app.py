@@ -5,7 +5,7 @@ from preprocess import format_week, format_month
 from backtest import backtest
 
 # PAGE CONFIGURATIONS
-st.set_page_config(page_title="Stock Trend Forecaster", page_icon="💲", layout="centered", initial_sidebar_state="collapsed")
+st.set_page_config(page_title="Stock Trend Forecaster", page_icon="🕵️", layout="centered", initial_sidebar_state="collapsed")
 
 top = """
         <style>
