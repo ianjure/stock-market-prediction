@@ -127,9 +127,9 @@ if predict_btn:
     stock_ticker = stock.info['symbol']
     stock = stock.history(period="max")
     
-    # CHECK IF THE STOCK IS PUBLICLY TRADED FOR MORE THAN 2 YEARS
-    if stock.shape[0] < 520:
-        st.warning("**Insufficient Data Error:** The stock is not publicly traded for more than 2 years.")
+    # CHECK IF THE STOCK IS PUBLICLY TRADED FOR MORE THAN 4 YEARS
+    if stock.shape[0] < 1040:
+        st.warning("**Insufficient Data:** The stock is not publicly traded for more than 4 years.")
     else:
         with st.spinner('Calculating the prediction...'):
             stock = format_week(stock) if timeframe == 'Week' else format_month(stock)
