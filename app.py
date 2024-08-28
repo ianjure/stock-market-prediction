@@ -28,8 +28,7 @@ hide = """
 st.markdown(hide, unsafe_allow_html=True)
 
 # TITLE
-st.markdown("<h1 style='text-align: center;'>🕵️</h1>", unsafe_allow_html=True)
-st.markdown("<h1 style='text-align: justify; text-justify: inter-word;'>Stock Trend Forecaster</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; text-justify: inter-word;'>Stock Trend Forecaster</h1>", unsafe_allow_html=True)
 st.markdown("<h1 style='text-align: center; justify-content: center;'>Stock Trend Forecaster</h1>", unsafe_allow_html=True)
 
 # SUBTITLE
