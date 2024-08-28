@@ -11,7 +11,8 @@ We will use the **[yfinance](https://pypi.org/project/yfinance/)** library to fe
 4. **Normalize the Data:** Scale the original variables to minimize dependency.
 5. **Append New Features:** Integrate economic data from FRED as additional features.
 6. **Build the Model:** Train various algorithms to identify the most effective one.
-7. **Deploy the Model:** Develop a web application to allow users to test the model.
+7. **Validate the Stocks:** Filter and identify stocks eligible for forecasting.
+8. **Deploy the Model:** Develop a web application to allow users to test the model.
 
 ## Next Steps
 * **Introduce** additional economic indicators to enhance data quality.
