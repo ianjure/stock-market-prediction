@@ -35,10 +35,9 @@ title = """
                 font-weight: 800;
                 line-height: 0.8;
                 text-shadow: 0px -5px 10px #000000, 0px 0px 15px black,  0px 0px 5px black, 0px 0px 5px black;
-                margin: 0px auto 0px auto;
+                margin: 0px 0px 0px 0px;
                 padding-top: -5px;
                 padding-bottom: -5px;
-                width:710px;
                 background: rgba(0, 0, 0, 0.5);'>
                 Stock Trend Forecaster
         </p>
