@@ -51,7 +51,7 @@ text.close()
 # MAIN UI
 with st.container(border=True):
     tickers = st.selectbox("SELECT A STOCK", all_stocks)
-    ticker = tickers.strip().split("-")[0]
+    ticker = tickers.split("-")[0].replace(" ", "")
     timeframe = st.selectbox("CHOOSE A TIMEFRAME", ("Week", "Month"))
     col1, col2 = st.columns(2)
 
