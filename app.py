@@ -5,7 +5,7 @@ from preprocess import format_week, format_month
 from backtest import backtest
 
 # PAGE CONFIGURATIONS
-st.set_page_config(page_title="Stock Trend Predictor", page_icon="📊", layout="centered", initial_sidebar_state="collapsed")
+st.set_page_config(page_title="Stock Trend Predictor", page_icon="💲", layout="centered", initial_sidebar_state="collapsed")
 
 top = """
         <style>
@@ -104,15 +104,15 @@ if predict_btn:
             with st.container(border=True):
                 if timeframe == 'Week':
                     if result['Predictions'][-1] > 0:
-                        st.success(f"**{stock_name} ({stock_ticker})** stock price will go up next week.", icon="📈")
+                        st.success(f"**{stock_name} ({stock_ticker})** stock price will go up next week.", icon="✔️")
                         st.info(f"**Confidence:** {round(result['Confidence'][-1] * 100)}%")
                     else:
-                        st.error(f"**{stock_name} ({stock_ticker})** stock price will go down next week.", icon="📉")
+                        st.error(f"**{stock_name} ({stock_ticker})** stock price will go down next week.", icon="🔻")
                         st.info(f"**Confidence:** {round((1 - result['Confidence'][-1]) * 100)}%")
                 else:
                     if result['Predictions'][-1] > 0:
-                        st.success(f"**{stock_name} ({stock_ticker})** stock price will go up next month.", icon="📈")
+                        st.success(f"**{stock_name} ({stock_ticker})** stock price will go up next month.", icon="✔️")
                         st.info(f"**Confidence:** {round(result['Confidence'][-1] * 100)}%")
                     else:
-                        st.error(f"**{stock_name} ({stock_ticker})** stock price will go down next month.", icon="📉")
+                        st.error(f"**{stock_name} ({stock_ticker})** stock price will go down next month.", icon="🔻")
                         st.info(f"**Confidence:** {round((1 - result['Confidence'][-1]) * 100)}%")
