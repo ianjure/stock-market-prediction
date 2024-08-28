@@ -28,15 +28,6 @@ hide = """
         """
 st.markdown(hide, unsafe_allow_html=True)
 
-pbtn = """
-        <style>
-        button[data-testid="stBaseButton-primary"] {
-                color: black;
-        }
-        </style>
-        """
-st.markdown(pbtn, unsafe_allow_html=True)
-
 # TITLE
 st.markdown("<p style='text-align: center; font-size: 6rem; line-height: 0;'>🕵️</p>", unsafe_allow_html=True)
 st.markdown("<p style='text-align: center; font-size: 3.4rem; font-weight: 800; line-height: 0.8; text-shadow: 0px -5px 10px #000000, 0px 0px 15px black,  0px 0px 5px black, 0px 0px 5px black;, 0px 0px 5px black;'>Stock Trend Forecaster</p>", unsafe_allow_html=True)
@@ -46,6 +37,14 @@ st.markdown("<p style='text-align: center; font-size: 1rem; font-weight: 500; li
 
 # SIDEBAR
 with st.sidebar:
+        with stylable_container(
+                        key = "dev_button",
+                        css_styles = """
+                        button[data-testid="stBaseButton-primary"] {
+                                    color: black;
+                        }
+                        """
+        ):
         st.link_button("**Developer:** Ian Jure Macalisang", "https://github.com/ianjure", type="primary", use_container_width=True)
         b1_col, b2_col = st.columns(2)
         with b1_col:
@@ -69,14 +68,14 @@ with col1:
     
 with col2:
         with stylable_container(
-                        key = "form_button",
+                        key = "pred_button",
                         css_styles = """
                         button[data-testid="stBaseButton-primary"] {
                                     color: black;
                         }
                         """
         ):
-                        predict_btn = st.button("**PREDICT TREND**", type="primary", use_container_width=True)
+                        predict_btn = st.button("PREDICT TREND", type="primary", use_container_width=True)
 
 info = False
 if chart_btn:
