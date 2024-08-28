@@ -6,12 +6,12 @@ We will use the **[yfinance](https://pypi.org/project/yfinance/)** library to fe
 
 ## Project Method
 1. **Fetch the Data:** Collect stock price data from Yahoo Finance.
-2. **Clean the Data:** Select relevant features and standardize the index format.
-3. **Create New Features:** Derive useful features from the existing variables.
-4. **Normalize the Data:** Scale the original variables to minimize dependency.
-5. **Append New Features:** Integrate economic data from FRED as additional features.
-6. **Build the Model:** Train various algorithms to identify the most effective one.
-7. **Validate the Stocks:** Filter and identify stocks eligible for forecasting.
+2. **Validate the Data:** Filter and identify stocks eligible for forecasting.
+3. **Clean the Data:** Select relevant features and standardize the index format.
+4. **Create New Features:** Derive useful features from the existing variables.
+5. **Normalize the Data:** Scale the original variables to minimize dependency.
+6. **Append New Features:** Integrate economic data from FRED as additional features.
+7. **Build the Model:** Train various algorithms to identify the most effective one.
 8. **Deploy the Model:** Develop a web application to allow users to test the model.
 
 ## Next Steps
