@@ -36,6 +36,7 @@ st.markdown("<p style='text-align: center; font-size: 1rem; font-weight: 500; li
 
 # SIDEBAR
 with st.sidebar:
+        st.link_button("**Creator:** Ian Jure Macalisang", "https://github.com/ianjure", use_container_width=True)
         with st.container(border=True):
             st.write("**Creator:** Ian Jure Macalisang")
         b1_col, b2_col = st.columns(2)
