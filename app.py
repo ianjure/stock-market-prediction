@@ -51,6 +51,7 @@ text.close()
 # MAIN UI
 with st.container(border=True):
     tickers = st.selectbox("SELECT A STOCK", all_stocks)
+    ticker = tickers.strip().split("-")[0]
     timeframe = st.selectbox("CHOOSE A TIMEFRAME", ("Week", "Month"))
     col1, col2 = st.columns(2)
 
@@ -62,8 +63,6 @@ with col2:
 
 if chart_btn:
     with st.spinner('Fetching stock information...'):
-        ticker = str(tickers.strip().split("-")[0])
-        st.write(type(ticker))
         stock = yf.Ticker(ticker)
         stock_name = stock.info['shortName']
         stock_website = stock.info['website']
