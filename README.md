@@ -1,4 +1,4 @@
-# Stock Market Trend Prediction &nbsp; [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ianjure/stock-market-trend-prediction/blob/main/Stock_Market_Trend_Prediction_Notebook.ipynb)
+# Stock Market Trend Forecast &nbsp; [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ianjure/stock-market-trend-prediction/blob/main/Stock_Market_Trend_Prediction_Notebook.ipynb)
 The **stock market** is known for its volatility, characterized by the buying and selling of stocks. This project aims to develop a machine learning model that forecasts weekly and monthly trends for publicly traded stocks. The model will predict whether stock prices will rise or fall in the upcoming week or month. To train various classification models and identify the most accurate one, we will use historical stock price and economic data. Following this, we will build a web application that allows users to test our model with up-to-date data.
 
 ## Data Overview
