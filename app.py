@@ -99,10 +99,7 @@ if chart_btn:
         with st.container(border=True):
                 info_1, info_2 = st.columns(2)
 
-        if info:
-                with st.container(border=True):
-                    info_1, info_2 = st.columns(2)
-                        
+        if info:     
                 with info_1:
                     st.write(f"**Company Name:** {stock_name}")
                     st.write(f"**Website:** {stock_website}")
@@ -110,10 +107,7 @@ if chart_btn:
                 with info_2:
                     st.write(f"**Sector:** {stock_sector}")
                     st.write(f"**Industry:** {stock_industry}")
-        else:
-                with st.container(border=True):
-                    info_1, info_2 = st.columns(2)
-                        
+        else:  
                 with info_1:
                     st.write(f"**Company Name:** {stock_name}")
                     st.write(f"**Volume:** {stock_volume} Shares")
