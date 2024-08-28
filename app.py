@@ -29,7 +29,7 @@ st.markdown(hide, unsafe_allow_html=True)
 
 # TITLE
 st.markdown("<p style='text-align: center; font-size: 6rem; line-height: 0.2;'>🕵️</p>", unsafe_allow_html=True)
-st.markdown("<p style='text-align: center; font-size: 3rem; font-weight: 800; line-height: 0.8; text-shadow: 0px -5px 10px #000000, 0px 0px 25px black, 0 0 5px black;'>Stock Trend Forecaster</p>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: center; font-size: 3rem; font-weight: 800; line-height: 0.8; text-shadow: 0px -5px 10px #000000, 0px 0px 25px black,  0px 0px 25px black, 0px 0px 5px black;'>Stock Trend Forecaster</p>", unsafe_allow_html=True)
 
 # SUBTITLE
 st.markdown("<p style='text-align: center; font-size: 1rem; font-weight: 500; line-height: 1.2;'>Predicts market movements based on historical and economic data.</p>", unsafe_allow_html=True)
