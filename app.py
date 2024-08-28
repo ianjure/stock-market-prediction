@@ -28,7 +28,7 @@ hide = """
 st.markdown(hide, unsafe_allow_html=True)
 
 # TITLE
-st.markdown("<h1 style='text-align: center; color: black;'>Stock Trend Predictor</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center;'>Stock Trend Predictor</h1>", unsafe_allow_html=True)
 
 # SIDEBAR
 with st.sidebar:
