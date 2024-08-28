@@ -40,7 +40,7 @@ with st.sidebar:
         with stylable_container(
                 key = "dev_button",
                 css_styles = """
-                button[data-testid="stBaseButton-primary"] {
+                button[data-testid="stLinkButton"] {
                         color: black;
                 }
                 """
