@@ -28,48 +28,58 @@ hide = """
 st.markdown(hide, unsafe_allow_html=True)
 
 # TITLE
-st.markdown("<h1 style='text-align: center; color: white;'>Stock Trend Predictor</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; color: black;'>Stock Trend Predictor</h1>", unsafe_allow_html=True)
 
 # SIDEBAR
 with st.sidebar:
-        st.info("Creator: Ian Jure Macalisang")
+        with st.container(border=True):
+            st.write("**Creator:** Ian Jure Macalisang")
         b1_col, b2_col = st.columns(2)
         with b1_col:
                 repo_button = st.link_button("SOURCE CODE", "https://github.com/ianjure/stock-market-trend-prediction", use_container_width=True)
         with b2_col:
                 notebook_button = st.link_button("NOTEBOOK", "https://colab.research.google.com/github/ianjure/stock-market-trend-prediction/blob/master/Stock_Market_Trend_Prediction_Notebook.ipynb", use_container_width=True)
 
+# GET ALL TICKER SYMBOLS
+text = open("symbols.txt", "r")
+stocks = text.read().split(",")
+
 # MAIN UI
-stocks = ('GOOG', 'AAPL', 'MSFT', 'ALAB','BTC-USD')
-ticker = st.selectbox("SELECT A STOCK", stocks)
-timeframe = st.selectbox("PREDICTION TIMEFRAME", ("Week", "Month"))
-col1, col2 = st.columns(2)
+with st.container(border=True):
+    ticker = st.selectbox("SELECT A STOCK", stocks)
+    timeframe = st.selectbox("PREDICTION TIMEFRAME", ("Week", "Month"))
+    col1, col2 = st.columns(2)
+
 with col1:
-    chart_btn = st.button("SHOW INFO", type="secondary", use_container_width=True)
+    chart_btn = st.button("SHOW INFO", type="secondary", use_container_width=True)\
+    
 with col2:
     predict_btn = st.button("PREDICT TREND", type="primary", use_container_width=True)
 
 if chart_btn:
+    with st.spinner('Fetching stock information...'):
+        stock = yf.Ticker(ticker)
+        stock_name = stock.info['longName']
+        stock_website = stock.info['website']
+        stock_sector = stock.info['sector']
+        stock_industry = stock.info['industry']
+        stock = stock.history(period="max")
 
-    # FETCH DATA
-    stock = yf.Ticker(ticker)
-    stock_name = stock.info['longName']
-    stock_ticker = stock.info['symbol']
-    stock = stock.history(period="max")
+        with st.container(border=True):
+            info_col1, info_col2 = st.columns(2)
 
-    # CHECK IF THE STOCK IS PUBLICLY TRADED FOR MORE THAN 2 YEARS
-    if stock.shape[0] < 520:
-        with st.spinner('Fetching stock information...'):
-            st.dataframe(stock.tail(), use_container_width=True)
-    else:
-        with st.spinner('Fetching stock information...'):
-            stock = format_week(stock) if timeframe == 'Week' else format_month(stock)
-            st.dataframe(stock.tail(), use_container_width=True)
-            st.line_chart(data=stock, x=None, y=['Close','Interest Rate', 'Effective Rate', 'Crude Oil'], x_label='Years', y_label='Price', use_container_width=True)
+        with info_col1:
+            st.write(f"**Company Name:** {stock_name}")
+            st.write(f"**Website:** {stock_website}")
+
+        with info_col2:
+            st.write(f"**Sector:** {stock_sector}")
+            st.write(f"**Industry:** {stock_industry}")
+
+        st.dataframe(stock.tail(), use_container_width=True)
+        st.line_chart(data=stock, x=None, y='Close', x_label='Years', y_label='Price', use_container_width=True)
 
 if predict_btn:
-    
-    # FETCH DATA
     stock = yf.Ticker(ticker)
     stock_name = stock.info['longName']
     stock_ticker = stock.info['symbol']
@@ -90,17 +100,18 @@ if predict_btn:
             model = LogisticRegression(random_state=1)
             result = backtest(stock, model, predictors, timeframe)
 
-            if timeframe == 'Week':
-                if result['Predictions'][-1] > 0:
-                    st.success(f"**{stock_name} ({stock_ticker})** stock price will go up next week.", icon="📈")
-                    st.info(f"**Confidence:** {round(result['Confidence'][-1] * 100)}%")
+            with st.container(border=True):
+                if timeframe == 'Week':
+                    if result['Predictions'][-1] > 0:
+                        st.success(f"**{stock_name} ({stock_ticker})** stock price will go up next week.", icon="📈")
+                        st.info(f"**Confidence:** {round(result['Confidence'][-1] * 100)}%")
+                    else:
+                        st.error(f"**{stock_name} ({stock_ticker})** stock price will go down next week.", icon="📉")
+                        st.info(f"**Confidence:** {round((1 - result['Confidence'][-1]) * 100)}%")
                 else:
-                    st.error(f"**{stock_name} ({stock_ticker})** stock price will go down next week.", icon="📉")
-                    st.info(f"**Confidence:** {round((1 - result['Confidence'][-1]) * 100)}%")
-            else:
-                if result['Predictions'][-1] > 0:
-                    st.success(f"**{stock_name} ({stock_ticker})** stock price will go up next month.", icon="📈")
-                    st.info(f"**Confidence:** {round(result['Confidence'][-1] * 100)}%")
-                else:
-                    st.error(f"**{stock_name} ({stock_ticker})** stock price will go down next month.", icon="📉")
-                    st.info(f"**Confidence:** {round((1 - result['Confidence'][-1]) * 100)}%")
+                    if result['Predictions'][-1] > 0:
+                        st.success(f"**{stock_name} ({stock_ticker})** stock price will go up next month.", icon="📈")
+                        st.info(f"**Confidence:** {round(result['Confidence'][-1] * 100)}%")
+                    else:
+                        st.error(f"**{stock_name} ({stock_ticker})** stock price will go down next month.", icon="📉")
+                        st.info(f"**Confidence:** {round((1 - result['Confidence'][-1]) * 100)}%")
