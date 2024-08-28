@@ -86,7 +86,7 @@ if chart_btn:
 
 if predict_btn:
     
-    ticker = ticker.strip().split("-")[0]
+    ticker = tickers.strip().split("-")[0]
     stock = yf.Ticker("ACWX")
     stock_name = stock.info['shortName']
     stock_ticker = stock.info['symbol']
