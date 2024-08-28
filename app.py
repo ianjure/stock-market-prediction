@@ -43,6 +43,7 @@ with st.sidebar:
 # GET ALL TICKER SYMBOLS
 text = open("symbols.txt", "r")
 stocks = text.read().split(",")
+text.close()
 
 # MAIN UI
 with st.container(border=True):
