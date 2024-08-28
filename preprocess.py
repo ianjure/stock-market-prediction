@@ -1,4 +1,5 @@
 import pandas as pd
+import streamlit as st
 from fredapi import Fred
 
 API_KEY = st.secrets['API_KEY_FRED']
