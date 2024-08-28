@@ -38,14 +38,14 @@ st.markdown("<p style='text-align: center; font-size: 1rem; font-weight: 500; li
 # SIDEBAR
 with st.sidebar:
         with stylable_container(
-                        key = "dev_button",
-                        css_styles = """
-                        button[data-testid="stBaseButton-primary"] {
-                                    color: black;
-                        }
-                        """
-        ):
-        st.link_button("**Developer:** Ian Jure Macalisang", "https://github.com/ianjure", type="primary", use_container_width=True)
+                key = "dev_button",
+                css_styles = """
+                button[data-testid="stBaseButton-primary"] {
+                        color: black;
+                }
+                """
+                ):
+                        st.link_button("**Developer:** Ian Jure Macalisang", "https://github.com/ianjure", type="primary", use_container_width=True)
         b1_col, b2_col = st.columns(2)
         with b1_col:
                 repo_button = st.link_button("SOURCE CODE", "https://github.com/ianjure/stock-market-trend-forecast", use_container_width=True)
@@ -68,13 +68,13 @@ with col1:
     
 with col2:
         with stylable_container(
-                        key = "pred_button",
-                        css_styles = """
-                        button[data-testid="stBaseButton-primary"] {
-                                    color: black;
-                        }
-                        """
-        ):
+                key = "pred_button",
+                css_styles = """
+                button[data-testid="stBaseButton-primary"] {
+                        color: black;
+                }
+                """
+                ):
                         predict_btn = st.button("PREDICT TREND", type="primary", use_container_width=True)
 
 info = False
