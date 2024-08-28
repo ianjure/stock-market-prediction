@@ -64,7 +64,6 @@ if chart_btn:
     with st.spinner('Fetching stock information...'):
         ticker = ticker.strip().split("-")[0]
         stock = yf.Ticker(ticker)
-        st.write(stock)
         stock_name = stock.info['shortName']
         stock_website = stock.info['website']
         stock_sector = stock.info['sector']
@@ -86,12 +85,13 @@ if chart_btn:
         st.line_chart(data=stock, x=None, y='Close', x_label='Years', y_label='Price', use_container_width=True)
 
 if predict_btn:
+    """
     ticker = ticker.strip().split("-")[0]
     stock = yf.Ticker(ticker)
     stock_name = stock.info['shortName']
     stock_ticker = stock.info['symbol']
     stock = stock.history(period="max")
-
+    """
     # CHECK IF THE STOCK IS PUBLICLY TRADED FOR MORE THAN 2 YEARS
     if stock.shape[0] < 520:
         st.warning("**Insufficient Data Error:** The stock is not publicly traded for more than 2 years.")
