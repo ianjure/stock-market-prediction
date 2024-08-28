@@ -64,8 +64,8 @@ if chart_btn:
     with st.spinner('Fetching stock information...'):
         ticker = ticker.strip().split("-")[0]
         stock = yf.Ticker(ticker)
-        st.write(stock.info)
-        stock_name = stock.info['longName']
+        st.write(stock)
+        stock_name = stock.info['shortName']
         stock_website = stock.info['website']
         stock_sector = stock.info['sector']
         stock_industry = stock.info['industry']
