@@ -28,6 +28,15 @@ hide = """
         """
 st.markdown(hide, unsafe_allow_html=True)
 
+pbtn = """
+        <style>
+        .button[data-testid="stBaseButton-primary"] {
+                color: black;
+        }
+        </style>
+        """
+st.markdown(pbtn, unsafe_allow_html=True)
+
 # TITLE
 st.markdown("<p style='text-align: center; font-size: 6rem; line-height: 0;'>🕵️</p>", unsafe_allow_html=True)
 st.markdown("<p style='text-align: center; font-size: 3.4rem; font-weight: 800; line-height: 0.8; text-shadow: 0px -5px 10px #000000, 0px 0px 15px black,  0px 0px 5px black, 0px 0px 5px black;, 0px 0px 5px black;'>Stock Trend Forecaster</p>", unsafe_allow_html=True)
