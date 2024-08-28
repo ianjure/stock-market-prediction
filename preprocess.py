@@ -1,8 +1,7 @@
-import os
 import pandas as pd
 from fredapi import Fred
 
-API_KEY = os.environ["API_KEY"]
+API_KEY = st.secrets['API_KEY_FRED']
 fred = Fred(api_key=API_KEY)
 
 def format_week(stock):
