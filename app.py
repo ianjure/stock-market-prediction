@@ -63,7 +63,7 @@ with col2:
 if chart_btn:
     with st.spinner('Fetching stock information...'):
         ticker = tickers.strip().split("-")[0]
-        stock = yf.Ticker(ticker)
+        stock = yf.Ticker(str(ticker))
         stock_name = stock.info['shortName']
         stock_website = stock.info['website']
         stock_sector = stock.info['sector']
@@ -87,7 +87,7 @@ if chart_btn:
 if predict_btn:
     
     ticker = tickers.strip().split("-")[0]
-    stock = yf.Ticker("ACWX")
+    stock = yf.Ticker(str(ticker))
     stock_name = stock.info['shortName']
     stock_ticker = stock.info['symbol']
     stock = stock.history(period="max")
