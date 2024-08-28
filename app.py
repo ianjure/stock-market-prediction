@@ -55,10 +55,18 @@ with st.container(border=True):
     col1, col2 = st.columns(2)
 
 with col1:
-    chart_btn = st.button("SHOW INFO", type="secondary", use_container_width=True)\
+    chart_btn = st.button("**SHOW INFO**", type="secondary", use_container_width=True)\
     
 with col2:
-    predict_btn = st.button("PREDICT TREND", type="primary", use_container_width=True)
+        with stylable_container(
+                        key = "form_button",
+                        css_styles = """
+                        button[data-testid="stBaseButton-primary"] {
+                                    color: black;
+                        }
+                        """
+        ):
+                        predict_btn = st.button("**PREDICT TREND**", type="primary", use_container_width=True)
 
 info = False
 if chart_btn:
