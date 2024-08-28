@@ -45,12 +45,12 @@ with st.sidebar:
 
 # GET ALL TICKER SYMBOLS
 text = open("stocks_clean.txt", "r")
-stocks = text.read().split("|")
+all_stocks = text.read().split("|")
 text.close()
 
 # MAIN UI
 with st.container(border=True):
-    ticker = st.selectbox("SELECT A STOCK", stocks)
+    tickers = st.selectbox("SELECT A STOCK", all_stocks)
     timeframe = st.selectbox("CHOOSE A TIMEFRAME", ("Week", "Month"))
     col1, col2 = st.columns(2)
 
@@ -62,7 +62,7 @@ with col2:
 
 if chart_btn:
     with st.spinner('Fetching stock information...'):
-        ticker = ticker.strip().split("-")[0]
+        ticker = tickers.strip().split("-")[0]
         stock = yf.Ticker(ticker)
         stock_name = stock.info['shortName']
         stock_website = stock.info['website']
