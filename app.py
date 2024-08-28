@@ -39,9 +39,9 @@ with st.sidebar:
         st.link_button("**Creator:** Ian Jure Macalisang", "https://github.com/ianjure", use_container_width=True)
         b1_col, b2_col = st.columns(2)
         with b1_col:
-                repo_button = st.link_button("SOURCE CODE", "https://github.com/ianjure/stock-market-trend-prediction", use_container_width=True)
+                repo_button = st.link_button("SOURCE CODE", "https://github.com/ianjure/stock-market-trend-forecast", use_container_width=True)
         with b2_col:
-                notebook_button = st.link_button("NOTEBOOK", "https://colab.research.google.com/github/ianjure/stock-market-trend-prediction/blob/master/Stock_Market_Trend_Prediction_Notebook.ipynb", use_container_width=True)
+                notebook_button = st.link_button("NOTEBOOK", "https://colab.research.google.com/github/ianjure/stock-market-trend-forecast/blob/master/Stock_Market_Trend_Forecast_Notebook.ipynb", use_container_width=True)
 
 # GET ALL TICKER SYMBOLS
 text = open("symbols.txt", "r")
