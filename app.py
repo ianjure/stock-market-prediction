@@ -37,8 +37,7 @@ title = """
                 text-shadow: 0px -5px 10px #000000, 0px 0px 15px black,  0px 0px 5px black, 0px 0px 5px black;
                 padding-top: -5px;
                 padding-bottom: -5px;
-                padding-left: -200px;
-                padding-right: -200px;
+                width:710px;
                 background: rgba(0, 0, 0, 0.5);'>
                 Stock Trend Forecaster
         </p>
