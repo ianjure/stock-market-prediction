@@ -10,7 +10,7 @@ new_list = []
 for ticker in symbols_list:
     stock = yf.Ticker(ticker)
     stock_hist = stock.history(period="max")
-    if stock_hist.shape[0] > 1050:
+    if stock_hist.shape[0] > 2470:
         try:
             stock_website = stock.info['website']
             stock_sector = stock.info['sector']
